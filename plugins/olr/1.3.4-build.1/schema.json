@@ -1,0 +1,12 @@
+{
+	"properties": {
+		"enabled": { "type": "boolean" },
+		"ignored": {
+			"type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "uniqueItems": true
+		}
+	},
+	"required": [ "type", "device" ]
+}

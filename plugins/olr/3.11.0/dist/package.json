@@ -1,0 +1,56 @@
+{
+    "name": "cmp-plugin-olr",
+    "version": "3.11.0-SNAPSHOT",
+    "description": "OLR for CMP",
+    "main": "dist/src/index.js",
+    "types": "dist/src/index.d.ts",
+    "scripts": {
+        "build": "npm run build-ts && npm run lint",
+        "build-ts": "npx tsc",
+        "watch-ts": "npx tsc -w",
+        "lint": "npx eslint --ext .ts src/",
+        "lint:fix": "npx eslint --ext .ts src/ --fix",
+        "test": "npx nyc mocha --require ts-node/register --extension ts --recursive tests"
+    },
+    "author": "Team IAM",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "http://stash.corp.web:7990/scm/cmp/cmp-plugin-olr.git"
+    },
+    "dependencies": {
+        "cmp-context": "^0.12.0",
+        "cmp-plugin-authentication": "3.8.0",
+        "cmp-plugin-base": "^3.7.0",
+        "lodash.find": "^4.6.0",
+        "lodash.foreach": "^4.5.0",
+        "lodash.isempty": "^4.4.0",
+        "lodash.reduce": "^4.6.0",
+        "sso-olr": "0.3.0"
+    },
+    "devDependencies": {
+        "@types/chai-as-promised": "^7.1.3",
+        "@types/lodash.find": "^4.6.6",
+        "@types/lodash.foreach": "^4.5.6",
+        "@types/lodash.isempty": "^4.4.6",
+        "@types/lodash.reduce": "^4.6.6",
+        "@types/mocha": "^8.2.0",
+        "@types/mock-require": "^2.0.0",
+        "@types/node": "^14.14.20",
+        "@types/sinon": "^9.0.10",
+        "@types/sinon-chai": "^3.2.5",
+        "@typescript-eslint/eslint-plugin": "^4.12.0",
+        "@typescript-eslint/parser": "^4.12.0",
+        "artifact-graph-publisher": "0.5.0",
+        "chai": "^4.2.0",
+        "chai-as-promised": "^7.1.1",
+        "eslint": "^7.17.0",
+        "mocha": "^8.2.1",
+        "mock-require": "^3.0.3",
+        "nyc": "^15.1.0",
+        "sinon": "^9.2.3",
+        "sinon-chai": "^3.5.0",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.3"
+    }
+}

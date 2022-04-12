@@ -1,0 +1,43 @@
+{
+    "name": "cmp-plugin-local-store",
+    "version": "3.1.5-build.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
+        "lint": "./node_modules/.bin/eslint ./index.js ./test/**/*.js --max-warnings 0",
+        "test": "./node_modules/.bin/nyc --reporter=cobertura --reporter=html --reporter=text ./node_modules/mocha/bin/_mocha",
+        "todo": "./node_modules/.bin/leasot **.*js ; exit 0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://stash.corp.web:7990/scm/cmp/cmp-plugin-local-store.git"
+    },
+    "dependencies": {
+        "cmp-plugin-base": "git+http://stash.corp.web:7990/scm/cmp/cmp-plugin-base.git#1.2.0",
+        "is-uuid": "^1.0.2",
+        "jsonfile": "^4.0.0",
+        "lodash": "^4.17.4",
+        "rc": "^1.1.6",
+        "requireall": "0.0.4",
+        "uuid": "^3.1.0"
+    },
+    "devDependencies": {
+        "artifact": "git+http://amature@stash.corp.web:7990/scm/ag/node-client.git#0.6.2",
+        "chai": "^4.1.2",
+        "eslint": "^4.6.1",
+        "eslint-config-standard": "^10.2.1",
+        "eslint-plugin-promise": "^3.3.1",
+        "eslint-plugin-standard": "^3.0.1",
+        "grunt": "^1.0.1",
+        "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "jit-grunt": "^0.10.0",
+        "jsdoc": "^3.4.2",
+        "leasot": "^4.3.1",
+        "minami": "^1.1.1",
+        "mocha": "^3.1.2",
+        "nyc": "^11.2.1",
+        "sinon": "^3.2.1"
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "installation": "local",
+  "port": 8080,
+  "plugins": {
+    "local-store": {}
+  },
+  "logging": {
+    "target": "console"
+  }
+}

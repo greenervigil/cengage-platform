@@ -1,0 +1,98 @@
+{
+    "host": "localhost",
+    "guid": "localhost",
+    "plugins": {
+      "sso": {
+        "endpoint": "http://int-ws-i.cengage.com",
+        "login": "http://localhost:8081/login",
+        "mode": "allow",
+        "authResponse": {
+          "guid": "data.guid",
+          "subscription-state-expirationDate": "data.subscriptionState.expirationDate"
+        }
+      },
+      "olr": {
+        "endpoint": "http://int-ws-i.cengage.com",
+        "login": "http://localhost:8080/login",
+        "mode": "allow",
+        "mappings": {
+          "authResponse": {
+            "guid": "data.entitlement.guid",
+            "role": "entitlementProduct.enrollmentType",
+            "cgi": "entitlementProduct.cgi",
+            "institution": "data.entitlement.institutionName",
+            "institution-id": "data.entitlement.cnowInstitutionId",
+            "is-gateway-course": "entitlementProduct.gatewayCourse|static.false"
+          }
+        }
+      },
+      "trace-phrase": {
+        "enabled": true
+      }
+    },
+    "paths": {
+      "/": {
+        "target": "http://127.0.0.1:3000/",
+        "changeOrigin": true,
+        "plugins": {
+          "sso": {
+            "allow": {
+              "paths": [
+                "_next/"
+              ]
+            },
+            "mode": "redirect",
+            "intended": true
+          },
+          "olr": {
+            "mode": "restrict",
+            "intended": true
+          }
+        }
+      },
+      "/services/mts-auth": {
+        "target": "https://qa-mts-services.cengage.info/services/mts-auth",
+        "plugins": {
+          "sso": {
+            "mode": "allow"
+          },
+          "olr": {
+            "mode": "allow"
+          }
+        }
+      },
+      "/services/mts-cmp": {
+        "url": "https://qa-mts-services.cengage.info/services/mts-cmp",
+        "plugins": {
+          "sso": {
+            "mode": "allow"
+          },
+          "olr": {
+            "mode": "allow"
+          }
+        }
+      },
+      "/services": {
+        "target": "https://qa-mts-services.cengage.info/services",
+        "plugins": {
+          "sso": {
+            "mode": "restrict"
+          },
+          "olr": {
+            "mode": "restrict"
+          }
+        }
+      },    
+      "/login": {
+        "target": "http://127.0.0.1:3000/login",
+        "plugins": {
+          "sso": {
+            "mode": "allow"
+          },
+          "olr": {
+            "mode": "allow"
+          }
+        }
+      }
+    }
+  }
