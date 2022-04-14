@@ -1,6 +1,7 @@
 import { Button, Input, Form, ButtonType, Paragraph, Card, CardAlignment, Container, InputType, Flex, FlexBehavior, FlexJustify, CardBody } from 'react-magma-dom';
 import { AuthService, Enrollment, AuthenticationResponse } from 'common-experience-client';
 import { useState } from 'react';
+import useSWR from 'swr';
 
 export interface DevLoginFormProps {
   setUserData: (userData: AuthenticationResponse) => void;
@@ -36,6 +37,7 @@ const DevLoginForm: React.FC<DevLoginFormProps> = ({ setUserData }) => {
       /*if (res.status === 'failure') {
         throw new Error(res.reason);
       }*/
+      console.log(res)
 
       if (res.token) {
         const userData = {

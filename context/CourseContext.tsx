@@ -37,10 +37,10 @@ export interface CourseProviderValue {
 
 const defaultCourseProps = {
   course: {
-    courseName: 'default test course',
-    startDate: '0',
-    endDate: '0',
-    workspaceId: '1',
+    courseName: '',
+    startDate: '',
+    endDate: '',
+    workspaceId: '',
     navigations: {
       'learning-plan': '',
       'learning-path': '',

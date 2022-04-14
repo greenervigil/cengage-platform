@@ -10,6 +10,7 @@ const Home: NextPage = () => {
   const token = router.query.token;
   const eISBN = router.query.eISBN;
   const courseKey = router.query.courseKey;
+  const guid = router.query.guid;
 
   return (
     <div>
@@ -21,18 +22,18 @@ const Home: NextPage = () => {
 
       <main>
         <Heading level={1} css>
-          Landing Page
+          Launch Page from Dev Login
         </Heading>
 
         <Jumbotron title='Session Data' description={''}>
-        <Paragraph>Token: {token}</Paragraph>
-        <Paragraph>eISBN: {eISBN}</Paragraph>
-        <Paragraph>courseKey: {courseKey}</Paragraph>
+          <Paragraph>Token: {token}</Paragraph>
+          <Paragraph>eISBN: {eISBN}</Paragraph>
+          <Paragraph>courseKey: {courseKey}</Paragraph>
+          <Paragraph>User GUID: {guid}</Paragraph>
         </Jumbotron>
       </main>
-
     </div>
   )
 }
 
-export default Home
+export default Home;

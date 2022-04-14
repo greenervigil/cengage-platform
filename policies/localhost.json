@@ -1,10 +1,10 @@
 {
-    "host": "localhost",
+    "host": "localhost:8080",
     "guid": "localhost",
     "plugins": {
       "sso": {
         "endpoint": "http://int-ws-i.cengage.com",
-        "login": "http://localhost:8081/login",
+        "login": "http://localhost:8080/login",
         "mode": "allow",
         "authResponse": {
           "guid": "data.guid",
@@ -12,7 +12,7 @@
         }
       },
       "olr": {
-        "endpoint": "http://int-ws-i.cengage.com",
+        "endpoint": "http://ws-i.cengage.com",
         "login": "http://localhost:8080/login",
         "mode": "allow",
         "mappings": {
@@ -38,7 +38,8 @@
           "sso": {
             "allow": {
               "paths": [
-                "_next/"
+                "_next",
+                "/course/"
               ]
             },
             "mode": "redirect",
@@ -51,7 +52,7 @@
         }
       },
       "/services/mts-auth": {
-        "target": "https://qa-mts-services.cengage.info/services/mts-auth",
+        "url": "https://qa-mts-services.cengage.info/services/mts-auth",
         "plugins": {
           "sso": {
             "mode": "allow"
@@ -73,7 +74,7 @@
         }
       },
       "/services": {
-        "target": "https://qa-mts-services.cengage.info/services",
+        "url": "https://qa-mts-services.cengage.info/services",
         "plugins": {
           "sso": {
             "mode": "restrict"
@@ -84,7 +85,7 @@
         }
       },    
       "/login": {
-        "target": "http://127.0.0.1:3000/login",
+        "url": "http://127.0.0.1:3000/login",
         "plugins": {
           "sso": {
             "mode": "allow"

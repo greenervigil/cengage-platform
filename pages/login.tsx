@@ -6,7 +6,11 @@ import { NextPage } from 'next';
 
 const Login: NextPage = () => {
     const [userData, setUserData] = React.useState<AuthenticationResponse>();
-    return <>{userData ? <ClassList userData={userData} /> : <DevLoginForm setUserData={setUserData} />}</>;
+    return (
+        <>
+            {userData ? <ClassList userData={userData} /> : <DevLoginForm setUserData={setUserData} />}
+        </>
+    );
 }
 
 export default Login;

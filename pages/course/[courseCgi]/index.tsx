@@ -1,7 +1,8 @@
 import { NextPage } from "next";
+import { Heading } from "react-magma-dom";
 
 const CourseHomePage: NextPage = () => {
-    return <div>HI</div>
+    return <Heading level={1} css>Course Landing Page</Heading>
 }
 
 export default CourseHomePage;

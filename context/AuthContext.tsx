@@ -1,5 +1,5 @@
+import { UserService } from "common-experience-client";
 import { createContext, useContext, useEffect, useState } from "react";
-//import { getUserProfile } from 'common-experience-client';
 
 export interface AuthProps {
     ssoEmail: string,
@@ -20,16 +20,16 @@ export interface AuthProviderValue {
 }
 
 const defaultAuthProps = {
-    ssoEmail: 'slkjasd@gmail.com',
-    ssoFirstName: 'Lettuce',
-    ssoLastName: 'Fields',
-    ssoGUID: '1',
-    ssoRole: '1',
-    ssoInstitution: 'ucls',
-    ssoISBN: '11221',
-    ssoCourseKey: '37',
-    ssoCGI: 'dsahk',
-    ssoIsGatewayCourse: 'dada',
+    ssoEmail: '',
+    ssoFirstName: '',
+    ssoLastName: '',
+    ssoGUID: '',
+    ssoRole: '',
+    ssoInstitution: '',
+    ssoISBN: '',
+    ssoCourseKey: '',
+    ssoCGI: '',
+    ssoIsGatewayCourse: '',
 };
 
 const AuthContext = createContext<AuthProviderValue | undefined>(undefined);
@@ -38,10 +38,6 @@ const AuthProvider: React.FC = ({children}) => {
     const [authState, setAuthState] = useState(defaultAuthProps);
 
     // TODO:  MTS-12283 call getUserData to update
-    /*useEffect(() => {
-        let user = getUserProfile;
-        console.log(user);
-    })*/
 
     return (
         <AuthContext.Provider value={{ authState, setAuthState }}>
