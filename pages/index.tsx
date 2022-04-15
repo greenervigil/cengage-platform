@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Heading, Paragraph } from 'react-magma-dom'
 import { Jumbotron } from 'common-experience-library'
+import Layout from '../components/layout'
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
   const guid = router.query.guid;
 
   return (
-    <div>
+    <Layout>
       <Head>
         <title>Cengage Platform</title>
         <meta name="description" content="Cengage Platform by Cengage Group" />
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
           <Paragraph>User GUID: {guid}</Paragraph>
         </Jumbotron>
       </main>
-    </div>
+    </Layout>
   )
 }
 
